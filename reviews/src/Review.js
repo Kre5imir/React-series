@@ -16,17 +16,21 @@ const Review = () => {
     if( number > people.length - 1){
       return 0
     }
+    if (number < 0) {
+      return people.length - 1;
+    }
+    return number;
   }
   const nextPerson = () => {
     setIndex((index) => {
       let newIndex = index + 1;
-      return newIndex;
+      return checkPosition(newIndex);
     })
   }
   const prevPerson = () => {
     setIndex((index) => {
       let newIndex = index - 1;
-      return newIndex;
+      return checkPosition(newIndex);
     })
   }
   
